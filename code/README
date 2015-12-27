@@ -1,0 +1,36 @@
+================================================================
+
+    README file for Assignment 2 - HTTP Proxy
+
+           Name: R Srivastav
+ Username/Login: iec2013072
+ 
+================================================================
+
+DESCRIBE YOUR CODE HERE AND DESIGN DECISIONS YOU MADE
+
++++++Compiling+++++
+-> copy all proxy.c ,Makefile ,proxy_parse.c,proxy_parse.h in one folder
+-> compile using terminal by command make
+-> run by command ./proxy 8080                   //here 8080 is port in browser used
+-> set proxy in mozilla as localhost or 127.0.0.1 and port to 8080 as set before
+
++++++Checking+++++
+->check for http://www.iiita.ac.in ,
+->terminal will receive host version of http page and get.
+
+
++++++explanation+++++
+-> locsocfd is the socket file descriptor for connection between proxy code to browser(mozilla)
+-> newsockfd is the socket file descriptor for connection between created proxy to server(network provider)
+-> connection fuction is used for connection between child and parent fork and also for checking conditions
+-> connection takes argument as port number of localhost
+-> After creating a file descriptor for newsockfd ,and success page loading i.e it will check if pid is zero and socket closes and goes back creating a newsockfd for receving another response from bowser,if not closed we cannot go loading other pages,as webaddress contains many    files to get loaded ,i have used recursion technique for each and every response
+-> parsing is used with suitable header files ,so as to parse web address suitable to browser using send statement
+
+
+
+
+
+
+
